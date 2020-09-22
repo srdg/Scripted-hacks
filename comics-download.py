@@ -26,19 +26,20 @@ def downloadPages():
 	return page_list
 
 def createFile(page_list):
-	print("Creating pdf file...")
+	print("Creating pdf file...",end="")
 	pdf = FPDF()
 	for page in page_list:
 		pdf.add_page()
 		pdf.image(page, 0,0,210,297)
-	pdf.output(args.s+".pdf", "F")
+	name = args.s[args.s.find("The"):args.s.rfind("(")]
+	pdf.output(name+".pdf", "F")
+	print("done.")
 	
 	
 
 def main():
 	page_list = downloadPages()
 	createFile(page_list)
-	
-	
+
 if __name__=="__main__":
 	main()
