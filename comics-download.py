@@ -38,8 +38,7 @@ def createFile(page_list):
 def main():
 	page_list = downloadPages()
 	createFile(page_list)
-	print(args.s, type(args.s))
-	print(args.n, type(args.n))
-	print(args.f, type(args.f))
+	
+	
 if __name__=="__main__":
 	main()
